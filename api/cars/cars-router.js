@@ -1,6 +1,7 @@
 // DO YOUR MAGIC
 const carsMod = require('./cars-model')
 const router = require('express').Router()
+const {checkCarId} = require('./cars-middleware')
 
 
 router.get('/', async (req,res, next) => {
@@ -12,7 +13,7 @@ router.get('/', async (req,res, next) => {
    }
 })
 
-router.get('/:id', async (req,res, next) => {
+router.get('/:id', checkCarId, async (req,res, next) => {
    try{
     const cars = await carsMod.getById(req.params.id)
     res.json(cars)
