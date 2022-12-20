@@ -1,11 +1,5 @@
 const knex = require('knex')
-const db = knex({
-  client: 'sqlite3',
-  connection: {
-    filename: './data/dealer.db3'
-  },
-  useNullAsDefault: true
-});
+const db = require('../../data/db-config')
 
 const getAll = () => {
   // DO YOUR MAGIC
@@ -14,6 +8,8 @@ const getAll = () => {
 
 const getById = () => {
   // DO YOUR MAGIC
+  
+
 }
 
 const create = () => {
