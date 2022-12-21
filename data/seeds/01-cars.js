@@ -6,7 +6,7 @@ const cars = [
         model: 'prius',
         title: 'salvage',
         transmission: 'CVT',
-        vin:'11111111111111111',
+        vin:'WBAAM3333XFP59732',
     },
     {
         make: "honda",
@@ -14,7 +14,7 @@ const cars = [
         model: "accord",
         title: "clean",
         transmission: "automatic",
-        vin: "33333333333333333",
+        vin: "JH4DA344XGS004311",
     },
     {
         make: "ford",
@@ -22,7 +22,7 @@ const cars = [
         model: "mustang",
         title: "clean",
         transmission: "manual",
-        vin: "22222222222222222",
+        vin: "1FAFP55U91A180689",
     }
 ]
 

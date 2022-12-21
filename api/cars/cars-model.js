@@ -11,10 +11,14 @@ const getById = (id) => {
   return db("cars").where("id", id).first();
 };
 
-const create = async (payload) => {
+const create = (payload) => {
   // DO YOUR MAGIC
-  const [id] = await db("cars").insert(payload);
-  return getById(id);
+  return db("cars").insert(payload).then(([id])=>{
+    return getById(id)
+  });
 };
 
-module.exports = { getAll, getById, create };
+const getVin = (vin) => {
+  return db('cars').where('vin', vin).first()
+}
+module.exports = { getAll, getById, create, getVin };
