@@ -1,7 +1,7 @@
 // DO YOUR MAGIC
 const carsMod = require('./cars-model')
 const router = require('express').Router()
-const {checkCarId} = require('./cars-middleware')
+const {checkCarId, checkCarPayload} = require('./cars-middleware')
 
 
 router.get('/', async (req,res, next) => {
@@ -22,5 +22,9 @@ router.get('/:id', checkCarId, async (req,res, next) => {
    }
 })
 
-
+router.post('/', checkCarPayload, async (req,res,next) => {
+  res.json(req.body)
+  next()
+})
+ 
 module.exports = router;

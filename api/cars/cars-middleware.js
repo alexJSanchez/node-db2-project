@@ -13,6 +13,12 @@ const checkCarId = async (req, res, next) => {
 
 const checkCarPayload = (req, res, next) => {
   // DO YOUR MAGIC
+    const {vin, make, model, mileage} = req.body;
+    if(!vin || !make || !model || !mileage){
+      next({ message: "<field name> is missing" })
+    }else{
+      next()
+    }
 }
 
 const checkVinNumberValid = (req, res, next) => {
@@ -23,4 +29,4 @@ const checkVinNumberUnique = (req, res, next) => {
   // DO YOUR MAGIC
 }
 
-module.exports = {checkCarId}
+module.exports = {checkCarId, checkCarPayload}

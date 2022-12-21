@@ -11,8 +11,10 @@ const getById = (id) => {
   return db('cars').where('id', id).first()
 }
 
-const create = () => {
+const create = async (payload) => {
   // DO YOUR MAGIC
+  const [id] = await db('accounts').insert(payload)
+  return getById(id)
 }
 
-module.exports = { getAll , getById, create}
+module.exports = {getAll , getById, create}
